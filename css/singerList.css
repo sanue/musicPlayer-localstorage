@@ -1,0 +1,53 @@
+.paihangTitle{
+	position: absolute;
+	top:10px;
+	left:30%;
+	margin: auto;
+	height: 80px;
+	line-height: 80px;vertical-align: middle;
+}
+
+#navRolLeft{
+	height: 300px;
+}
+#navRolTitle{
+	font-weight: bold;
+	background-color: #ffcc99;
+	border-radius: 12px;
+}
+#navRolLeft,#tip{
+	background-color: #272822;
+}
+/* 排行榜 */
+.paihang{
+	position: relative;
+	background-size: 100% 80px;
+	height: 80px;
+	line-height: 80px;
+	font-size: 30px;
+	text-align: center;
+	color: gray;
+	width: 100%;
+}
+#ti{
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+	color: white;
+	font-size: 35px;
+}
+.operate{
+width:200px
+}
+.operate>img:nth-child(1){
+cursor: pointer;
+}.operate>img:nth-child(2){
+cursor: pointer;
+}.operate>img:nth-child(3){
+cursor: pointer;
+}.operate>img:nth-child(4){
+cursor: pointer;
+}
+.cata:hover{
+    cursor:pointer;
+}

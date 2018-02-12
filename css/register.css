@@ -1,0 +1,55 @@
+        body{
+-moz-user-select:none;/*火狐*/
+-webkit-user-select:none;/*webkit浏览器*/
+-ms-user-select:none;/*IE10*/
+-khtml-user-select:none;/*早期浏览器*/
+user-select:none;
+}
+.button{
+	display: inline-block;
+}
+.registerBox{
+	width: 1000px;
+	margin: auto;
+}
+.gray{
+	color: gray;
+}
+.white{
+	color: white;
+}
+/* <!-- 注册Box --> */
+.registerContent{
+	width: 960px;
+	height: 460px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 12px;
+}
+*{margin:0; padding:0;}
+body{font-size:12px; font-family: "微软雅黑"; background: #f6f6f6;}
+.center-align{text-align: center;}
+.tm-32{margin-top: 32px;}
+.container{width:960px; margin: 32px auto;}
+.main-title{height:48px; line-height: 48px; font-size: 18px; text-align: center; background: #fff9f3; border:1px solid #e6e6e6; letter-spacing: 3px;}
+.user-container{padding:0px 20px; margin-top: 16px; border:1px solid #e6e6e6; background: #fff9f3;}
+.sub-title{
+	 height:40px;
+     line-height: 40px; 
+     text-align: left; 
+     font-size:16px; 
+	 color:gray;
+	 border-bottom: 1px solid #e6e6e6;}
+div.form-item{height:36px;line-height: 36px; padding:6px 0px; margin-top: 16px;}
+div.form-item .item-title{display: inline-block; width:96px; font-size: 14px; color:#666666; text-align: right; margin-right: 6px;}
+div.form-item .item-title span{display: inline-block; padding:0px 3px; color:red;}
+.item-textbox{height:24px; line-height: 24px; border:1px solid #e6e6e6; width:240px; font-size:14px; padding:3px; }
+.btn-submit{font-size:14px; font-weight:400; text-align: center; display: inline-block; padding:8px 16px; margin: 16px 0px; color:#fff; background: #ff9933; border:1px solid #ffaa44; min-width:96px;}
+label.my-error{
+	background-color:#FDC1B5;
+	color:white;
+	
+}
+.sex{
+	font-family: '微软雅黑';
+	font-size: 15px;
+}

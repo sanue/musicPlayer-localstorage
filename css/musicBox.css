@@ -1,0 +1,122 @@
+#BoxContain,#topBottomFont{
+	width: 1000px;
+	margin: auto;
+}
+.content{
+	background:url(../images/bggg.jpg);
+	color: white;
+	text-align: center;
+	padding-top: 300px;
+    display: none;
+}
+.contMid{
+	width: 1000px;
+	margin: auto;
+
+}
+
+#contentlogin:hover{
+	background-color:#ccc;
+	color: white;
+	cursor: pointer;
+}
+/* 我的音乐盒主页 */
+#Boxtop{
+	width: 100%;
+	height: 380px;
+	background: url(../images/musicBoxbg.jpg);
+	background-size: cover;
+	padding-top: 100px;
+}
+#toux{
+	border-radius: 50%;
+	background-color: white;
+	width: 110px;
+	height: 110px;
+	margin: auto;
+	position: relative;
+}
+#myname{
+	font-size: 30px;
+	color: white;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+#toux>img{
+	border-radius: 50%;
+	position: absolute;
+	left: 5px;
+	top:5px;
+}
+#topBottomFont{
+	margin-top: 60px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	color: white;
+}
+#topBottomFont>div,.BoxContainTitle>div{
+	display: inline-block;
+	margin-right: 50px;
+}
+#topBottomFont>div:hover,.BoxContainTitle>div:hover{
+	cursor: pointer;
+	color: #ffcc99;
+}
+.BoxContainTitle,#BoxContainbtn{
+	height: 35px;
+	line-height: 35px;
+}
+#BoxContain{
+	font-size: 15px;
+	min-height: 800px;
+}
+#BoxContainbtn>div{
+	margin-top: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 130px;
+	text-align: center;
+	margin-left: 5px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.mysongs{
+	margin-top: 50px;
+	color: gray
+}
+.mysongs>table>tbody>tr>td{
+	height: 45px;
+	line-height: 45px;
+	width: 200px;
+}
+.mysongs>table>thead>tr>td{
+	height: 45px;
+	line-height: 45px;
+	width: 200px;
+	background-color: #fbfbfd;
+	font-size: 18px;
+}
+.mysongs>table>tbody>tr:nth-child(2n){
+	background-color: #fbfbfd;
+}
+
+.mysongs>table>tbody>tr>td:nth-child(1){
+	width:40px; 
+}.mysongs>table>tbody>tr>td:nth-child(2){
+	width:260px; 
+}.mysongs>table>tbody>tr>td:nth-child(3){
+	width:280px; 
+}.mysongs>table>tbody>tr>td:nth-child(4){
+	width:120px; 
+}
+/* 图标 */
+.mysongs>table>tbody>tr>td:nth-child(1)>div{
+    margin-left: 30px;
+    display: inline-block;
+}
+.imags>img{
+	cursor: pointer;
+}

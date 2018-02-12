@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MUSICBOX</title>
+    <meta http-equiv="Cache-Control" content="no-cache">
+<!--     <meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.4">
+     -->    <meta name="MobileOptimized" content="240">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link href="css/blue.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/mymusicBox.css" />
+
+   <!--  滚动条 -->
+    <link rel="stylesheet" href="css/optiscroll.css">
+
+</head>
+<body>
+
+    <textarea id="lrc_content" name="textfield" cols="70" rows="10" style="display: none;"> 
+[00:03.00]洋葱
+[00:06.00]演唱：平安
+[00:09.00]
+[00:11.38]如果你眼神能够为我片刻的降临
+[00:21.23]如果你能听到心碎的声音
+[00:28.88]盘底的洋葱像我永远是配角戏
+[00:35.74]偷偷的看着你偷偷的隐藏着自己
+[00:43.48]
+[00:44.90]如果你愿意一层一层
+[00:48.46]一层的剥开我的心
+[00:52.66]你会发现你会讶异
+[00:56.40]你是我最压抑最深处的秘密
+[01:00.26]如果你愿意一层一层
+[01:03.69]一层的剥开我的心
+[01:07.76]你会鼻酸你会流泪
+[01:11.60]只要你能听到我看到我的全心全意
+[01:18.30]
+[01:19.11]如果你愿意一层一层
+[01:22.57]一层的剥开我的心
+[01:26.66]你会发现你会讶异
+[01:30.41]你是我最压抑最深处的秘密
+[01:34.48]如果你愿意一层一层
+[01:37.58]一层的剥开我的心
+[01:41.51]你会鼻酸你会流泪
+[01:45.15]只要你能听到我看到我的全心全意
+[01:53.55]
+[01:55.65]你会鼻酸你会流泪
+[01:59.84]只要你能听到我看到我的全心全意
+</textarea>
+<!-- 音乐盒 -->
+    <div class="music_box">
+        <div id="jquery_jplayer_1" class="jp-jplayer">
+        </div>
+        <div id="jp_container_1" class="jp-audio">
+            <div class="jp-type-single">
+                <div class="jp-gui jp-interface">
+                    <ul class="jp-controls">
+                        <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                        <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                        <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                        <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                        <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max
+                            volume</a></li>
+                    </ul>
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="jp-volume-bar">
+                        <div class="jp-volume-bar-value">
+                        </div>
+                    </div>
+                    <div class="jp-time-holder">
+                        <div class="jp-current-time">
+                        </div>
+                        <div class="jp-duration">
+                        </div>
+                        <ul class="jp-toggles">
+                            
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- 按钮 -->
+
+                    <div class="boxbtn btns">
+                                       <div id="addSong">添加</div>
+                                       <div id="btn1"> 播放</div>
+                                       <div id="btn2"> 暂停</div>
+                                       <div id="btn3"> 上一首</div>
+                                       <div id="btn4">下一首</div>
+ <span id="logo"><img src="images/logo2.png" height="75" width="300"></span>                             
+                    </div>
+
+        <!-- 播放菜单 -->
+<div class="content">
+            <!-- 歌名 -->
+           <ul id="lrc_list">
+                <li>洋葱</li>
+            </ul>
+            <!-- 歌手图片 -->
+    <div class="boximg">
+        <div class="boxPic">
+            <img src="images/2.jpg" height="150" width="150">
+        </div>
+    </div>           
+</div>
+    </div>
+ 
+
+<div id="os1" class="optiscroll column mid-50">
+ <div id="contain">
+<input type="file" id="fileUp" style="display: none" onchange="showFileMessage(this);"/>
+  <table cellpadding="0" cellspacing="0">
+   <thead id="thd">
+    <tr>
+      <th>序号</th>
+      <th>歌曲名称</th>
+      <th>歌手</th>
+      <th>歌曲大小</th>
+      <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="tby">
+      
+    </tbody>
+  </table>
+ 
+<!--  <div class="btns">
+     <button>播放</button>
+       <button>暂停</button>
+       <button>上一首</button>
+       <button>下一首</button>
+  </div>-->
+</div>  </div>
+
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.jplayer.js"></script>
+    <script type="text/javascript" src="js/optiscroll.js"></script>
+    <script type="text/javascript" src="js/lrc.js"></script>
+    <script src='js/mymusicBox.js'></script>
+  <script>
+    var data;
+  var currentIndex = 0;
+  var player = $('#jp_audio_0');
+$(function(){
+   //把内容存储
+   if(localStorage.songs === undefined || JSON.parse(localStorage.songs).length==0){
+      var data1 = [
+  {id:1,name:'匆匆那年',songer:'王菲',length:9720684,source:'audio/匆匆那年-王菲.mp3'},
+  {id:2,name:'梨花开',songer:'韩红',length:13099992,source:'audio/梨花开-韩红.mp3'},
+  {id:3,name:'We are world',songer:'群星',length:17095855,source:'audio/We are world-群星.mp3'},
+  {id:4,name:'默',songer:'那英',length:13022059,source:'audio/默-那英.mp3'},
+  {id:5,name:'平凡之路',songer:'张信哲',length:11255640,source:'audio/平凡之路-张信哲.mp3'},
+  ];
+  localStorage.No = data1.length;
+
+      localStorage.songs = JSON.stringify(data1);
+}
+  data = JSON.parse(localStorage.songs);
+
+  //chuangjian
+    for(var i=0;i<data.length;i++){
+       var tby = $('tbody');
+       tby.append(create(data[i],i+1));
+       
+    }
+
+  
+  //播放暂停
+  $('#btn1').bind('click',function(){
+    if($('#jp_audio_0').get(0).paused){
+      $('#jp_audio_0').get(0).play();
+    }
+    
+  })
+  $('#btn2').bind('click',function(){
+     $('#jp_audio_0').get(0).pause();
+  });
+    //上一首
+    $('#btn3').bind('click',function(){
+        if(currentIndex < 0){
+          currentIndex = data.length - 1;
+        }else{
+          currentIndex--;
+        }
+        play();
+    });
+
+    //下一首
+    $('#btn4').bind('click',function(){
+    if(currentIndex < data.length - 1){
+      currentIndex++;
+    }else{
+      currentIndex=0;
+    }
+    play();
+  });
+
+  //自动循环播放
+  $(player).bind('ended',function(){
+    if(currentIndex < data.length - 1){
+      currentIndex++;
+    }else{
+      currentIndex=0;
+    }
+    play();   
+  })
+
+   //移动光标变色
+    $('td').bind('mousemove',function(){
+      $(this).parent().attr('class','bgc');
+    })
+    $('td').bind('mouseout',function(){
+      $(this).parent().removeClass('bgc');
+    
+    })
+
+    //添加
+    $('#addSong').bind('click',function(){
+      $('#fileUp').get(0).click();
+
+    })
+   
+  
+})
+
+//play
+function play(){
+     $('#jp_audio_0').attr("src",data[currentIndex].source);
+     $('#jp_audio_0').get(0).play();
+}
+function create(c,num){
+   
+   var tr = $('<tr></tr>');
+   var idTd = $('<td></td>').text(num).appendTo(tr);
+     var nameTd = $('<td></td>').text(c.name).appendTo(tr);
+     var songerTd = $('<td></td>').text(c.songer).appendTo(tr);
+    
+   var lengthTd = $('<td></td>').text(c.length).appendTo(tr);
+     var doTd = $('<td></td>').text('X').attr('class','del').appendTo(tr);
+     //删除当前行
+     doTd.bind('click',function(){
+      //删除同时删除数据
+      data = JSON.parse(localStorage.songs);
+        var index = $(this).parent().index();
+        data.splice(index,1);
+
+        localStorage.songs = JSON.stringify(data);
+        tr.remove();
+        localStorage.No=parseInt(localStorage.No)-1;
+        getId();
+
+     })
+   //点击播放
+   tr.bind('click',function(){
+     $('#jp_audio_0').attr('src',c.source);
+     $('#jp_audio_0').get(0).play();
+	 currentIndex = c.id;
+   })
+    
+
+        return tr;
+  }
+//显示文件信息
+function showFileMessage(sender){
+  var file = sender.files[0];
+  //{id:5,name:'平凡之路',songer:'张信哲',length:1234,source:'audio/平凡之路-张信哲.mp3'},
+  
+  var id = parseInt(localStorage.No)+1;
+  var fileName = file.name;
+  var name = file.name.substring(0,file.name.lastIndexOf('-'));
+  var songer = file.name.substring(name.length+1,file.name.lastIndexOf('.'));
+    var length = file.size;
+    var c = {id:id,name:name,songer:songer,length:length,source:'audio/'+fileName};
+    data.push(c);
+    $('tbody').append(create(c,id));
+    localStorage.songs = JSON.stringify(data);
+
+    localStorage.No=id;
+    currentIndex = localStorage.No-1;
+    play(currentIndex);
+
+    
+
+}
+function getId(){
+  var $rows = $('tbody>tr');
+  $rows.each(function(index , element){
+    $(element).children().eq(0).text(index + 1);
+  })
+  // for(var i=1;i<=$('tbody>tr').length;i++){  
+  //  $('tr td:eq(0)').text(i);
+  // }
+}
+</script>   
+</body>
+</html>

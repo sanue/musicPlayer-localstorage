@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/musicplay.iml" filepath="$PROJECT_DIR$/.idea/musicplay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/musicplayFinally.iml" filepath="$PROJECT_DIR$/musicplayFinally.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myMusicBoxF.iml" filepath="$PROJECT_DIR$/myMusicBoxF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/汪荷怡-myMusicBoxF.iml" filepath="$PROJECT_DIR$/汪荷怡-myMusicBoxF.iml" />
+    </modules>
+  </component>
+</project>

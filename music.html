@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Music</title>
+<style type="text/css">
+	#addSong{
+		float: right;
+	}
+	#contain{
+		width: 690px;
+		margin: auto;
+	}
+	table{
+		width: 690px;
+	} 
+	tr{
+		border-bottom: 1px solid #ccc;
+		
+
+	}
+	td{
+		width:150px;
+		border-bottom:  1px solid #ccc;
+		line-height: 30px;
+		font-family: '微软雅黑';
+		text-align: center;
+		cursor: pointer;
+	}
+	th{
+		width:150px;
+		border-bottom:  1px solid #ccc;
+		line-height: 30px;
+		font-family: '微软雅黑'
+	}
+	.btns{
+		float: right;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		
+		font-family: '微软雅黑';
+	}
+	.del{
+		cursor: pointer;
+	}
+	.bgc{
+		background-color: gray;
+	}
+</style>
+</head>
+<body>
+<div id="contain">
+<input type="file" id="fileUp" style="display: none" onchange="showFileMessage(this);"/>
+<button id="addSong">添加</button>	
+	<table cellpadding="0" cellspacing="0">
+	 <thead>
+		<tr>
+			<th>序号</th>
+			<th>歌曲名称</th>
+			<th>歌手</th>
+			<th>文件大小</th>
+			<th>操作</th>
+		</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	<audio id='myaudio' controls>
+		<source src='audio/匆匆那年-王菲.mp3' type='audio/mpeg'>
+		浏览器不支持
+	</audio>
+	<div class="btns">
+	   <button>播放</button>
+       <button>暂停</button>
+       <button>上一首</button>
+       <button>下一首</button>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+    var data;
+	var currentIndex = 0;
+	var player = $('#myaudio').get(0);
+$(function(){
+	 //把内容存储
+   if(localStorage.songs === undefined || JSON.parse(localStorage.songs).length==0){
+   		var data1 = [
+	{id:1,name:'匆匆那年',songer:'王菲',length:9720684,source:'audio/匆匆那年-王菲.mp3'},
+	{id:2,name:'梨花开',songer:'韩红',length:13099992,source:'audio/梨花开-韩红.mp3'},
+	{id:3,name:'We are world',songer:'群星',length:17095855,source:'audio/We are world-群星.mp3'},
+	{id:4,name:'默',songer:'那英',length:13022059,source:'audio/默-那英.mp3'},
+	{id:5,name:'平凡之路',songer:'张信哲',length:11255640,source:'audio/平凡之路-张信哲.mp3'},
+	];
+	localStorage.No = data1.length;
+
+      localStorage.songs = JSON.stringify(data1);
+}
+	data = JSON.parse(localStorage.songs);
+
+	//chuangjian
+    for(var i=0;i<data.length;i++){
+    	 var tby = $('tbody');
+    	 tby.append(create(data[i],i+1));
+    	 
+    }
+
+ 	
+	//播放暂停
+	$('button:eq(1)').bind('click',function(){
+		if(player.paused){
+			player.play();
+		}
+		
+	})
+	$('button:eq(2)').bind('click',function(){
+		player.pause();
+	});
+    //上一首
+    $('button:eq(3)').bind('click',function(){
+        if(currentIndex < 0){
+        	currentIndex = data.length - 1;
+        }else{
+        	currentIndex--;
+        }
+        play();
+    });
+
+    //下一首
+    $('button:eq(4)').bind('click',function(){
+		if(currentIndex < data.length - 1){
+			currentIndex++;
+		}else{
+			currentIndex=0;
+		}
+		play();
+	});
+
+	//自动循环播放
+	$(player).bind('ended',function(){
+		if(currentIndex < data.length - 1){
+			currentIndex++;
+		}else{
+			currentIndex=0;
+		}
+		play();		
+	})
+
+   //移动光标变色
+    $('td').bind('mousemove',function(){
+    	$(this).parent().attr('class','bgc');
+    })
+    $('td').bind('mouseout',function(){
+    	$(this).parent().removeClass('bgc');
+		
+    })
+
+    //添加
+    $('#addSong').bind('click',function(){
+    	$('#fileUp').get(0).click();
+
+    })
+   
+	
+})
+
+//play
+function play(currentIndex){
+        player.src = data[currentIndex].source;
+		player.play();
+}
+function create(c,num){
+	 
+	 var tr = $('<tr></tr>');
+	 var idTd = $('<td></td>').text(num).appendTo(tr);
+     var nameTd = $('<td></td>').text(c.name).appendTo(tr);
+     var songerTd = $('<td></td>').text(c.songer).appendTo(tr);
+    
+	 var lengthTd = $('<td></td>').text(c.length).appendTo(tr);
+     var doTd = $('<td></td>').text('X').attr('class','del').appendTo(tr);
+     //删除当前行
+     doTd.bind('click',function(){
+     	//删除同时删除数据
+     	data = JSON.parse(localStorage.songs);
+        var index = $(this).parent().index();
+        data.splice(index,1);
+
+        localStorage.songs = JSON.stringify(data);
+        tr.remove();
+        localStorage.No=parseInt(localStorage.No)-1;
+        getId();
+
+     })
+	 //点击播放
+	 tr.bind('click',function(){
+	 	player.src = c.source;
+	 	player.play();
+	 })
+    
+
+        return tr;
+	}
+//显示文件信息
+function showFileMessage(sender){
+	var file = sender.files[0];
+	//{id:5,name:'平凡之路',songer:'张信哲',length:1234,source:'audio/平凡之路-张信哲.mp3'},
+	
+	var id = parseInt(localStorage.No)+1;
+	var fileName = file.name;
+	var name = file.name.substring(0,file.name.lastIndexOf('-'));
+	var songer = file.name.substring(name.length+1,file.name.lastIndexOf('.'));
+    var length = file.size;
+    var c = {id:id,name:name,songer:songer,length:length,source:'audio/'+fileName};
+    data.push(c);
+    $('tbody').append(create(c,id));
+    localStorage.songs = JSON.stringify(data);
+
+    localStorage.No=id;
+    currentIndex = localStorage.No-1;
+    play(currentIndex);
+
+    
+
+}
+function getId(){
+	var $rows = $('tbody>tr');
+	$rows.each(function(index , element){
+		$(element).children().eq(0).text(index + 1);
+	})
+}
+</script>
+</body>
+</html>

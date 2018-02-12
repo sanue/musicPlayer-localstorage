@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>歌手分类</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+	<link rel="stylesheet" type="text/css" href="css/singerscatagory.css">
+	<link rel="stylesheet" type="text/css" href="css/search-form.css">
+</head>
+<body>
+	<!-- 头部 -->
+    <div id="dialogContainer">
+        <iframe src="login.html" frameborder="0"></iframe>
+    </div>
+	
+    <div id="title">
+    	<img src="images/logo.png" id="logo" height="72" width="620">
+    	<div class="dlzc" id="register">
+	    	<a href='#' id="login" onclick="btnLogin_onclick()">登录</a>
+	    	<a href='register.html'>注册</a>
+			<!--搜索框-->
+			<section class="container" style="z-index:99999">
+				<form>
+					<div class="search-wrapper">
+						<div class="input-holder">
+							<input type="text" class="search-input" placeholder="搜索歌手" />
+							<button class="search-icon" onclick="searchToggle(this, event);">
+								<span style="font-family:'微软雅黑';font-size:15px;color:gray;">歌手搜索</span></button>
+						</div>
+						<span class="close" onclick="searchToggle(this, event);"></span>
+
+					</div>
+				</form>
+			</section>
+	    </div>
+    </div>
+<!-- 标题 -->
+	<div class="nav">
+		<ul>
+			<li><a href="homepage.html">首页</a></li>
+			<li><a href="singersCatagory.html" id="hit">歌手</a></li>
+			<li><a href="singerList.html">榜单</a></li>
+			<li><a href="musicBox.html">音乐盒</a></li>
+			<li><a href="client.html">下载客户端</a></li>
+			<li></li>
+		</ul>
+	</div>
+<!-- 主体内容 -->
+	<div class="content">
+	<div class="returnTop"><a href='#title'><img src="images/fd1.png" height="80" width="80"></div></a>
+	<!-- 竖排导航 -->
+       <div id="navRol">
+	       <div id="navRolLeft">
+	       	 <ul>
+	       	 <!-- 标题歌手地区 -->
+	       	 </ul>
+	       </div>
+	       <div id="tip">
+	       	touch<br /><br />
+	       	me<br/></br />
+	       	<img src='images/star.png' height="30" width="30" />
+	       </div>
+       </div>
+	
+	<!-- 歌手信息 -->
+	<div id="informationTitle">
+	   <span>歌手信息</span>
+	</div>
+	<div class="singersInformation">
+	
+  <div id="hot">热门</div>
+  <div class="searchSinger">
+
+  	  <ul>
+  	  	<li>A</li>
+  	  	<li>B</li>
+  	  	<li>C</li>
+  	  	<li>D</li>
+  	  	<li>E</li>
+  	  	<li>F</li>
+  	  	<li>G</li>
+  	  	<li>H</li>
+  	  	<li>I</li>
+  	  	<li>J</li>
+  	  	<li>K</li>
+  	  	<li>L</li>
+  	  	<li>M</li>
+  	  	<li>N</li>
+  	  	<li>O</li>
+  	  	<li>P</li>
+  	  	<li>Q</li>
+  	  	<li>R</li>
+  	  	<li>S</li>
+  	  	<li>T</li>
+  	  	<li>U</li>
+  	  	<li>V</li>
+  	  	<li>W</li>
+  	  	<li>X</li>
+  	  	<li>Y</li>
+  	  	<li>Z</li>
+  	  	<li>#</li>
+  	  </ul>
+  </div>
+
+<!-- 歌手列表 -->
+
+<!-- <li>
+<span id="singerNames">汪苏泷</span>
+<div class="shape">
+	<a href="#" class="overlay round"></a>
+	
+	<div class="details">
+		<span class="heading">汪苏泷</span>
+		<hr />
+		<p>一笑倾城</p>		
+		<a href="singerDetails.html" class="button">Listen</a>
+	</div>
+	
+	<div class="bg"></div>
+	
+	<div class="base">
+		<img src="images/1.jpg" height="200" width="200" />
+	</div>
+	
+</div>	
+	
+</li>
+ -->
+
+<!-- 
+<li>
+	<span id="singerNames">汪苏泷</span>
+<div class="shape">
+	<a href="#" class="overlay hexagon"></a>
+	<div class="details">
+		<span class="heading">杨丞琳</span>
+		<hr />
+		<p>暧昧</p>		
+		<a href="#" class="button">Listen</a>		
+	</div>
+	<div class="bg"></div>	<div class="base">
+		<img src='images/2.jpg' height="200" width="200"/>
+	</div>
+</div>	
+	
+</li> -->
+
+
+
+<ul class="clearFloataf" id="aa">
+
+
+
+	
+</ul>
+
+
+
+	</div>
+
+  <div class="pages clearFloat">
+  	<ul>
+  	    <li id="before"><</li>
+  		<li>1</li>
+  		<li>2</li>
+  		<li>3</li>
+  		<li>4</li>
+  		<li>5</li>
+  		<li>6</li>
+  		<li id="after">></li>
+  	</ul>
+  </div>
+	<!--	<iframe id="myplayer" name="myiframe" src="player.html" frameborder="0"></iframe>-->
+</div>
+
+<div id="footer">
+    CopyRight 苏州安艾艾迪职业培训中心 2016H50711 班
+</div>
+ <script src="js/jquery.js"></script>
+ <script src="js/global.js"></script>
+ <script src="js/singersCatagory.js"></script> 
+ <script src='js/data.js'></script>
+ <script src="js/search.js"></script>
+
+ </body>
+</html>
